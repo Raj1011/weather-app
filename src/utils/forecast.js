@@ -10,7 +10,9 @@ const forecast = (lat, long , callback)=>{
             callback("Unable to find location. Try another!", undefined)
         }else{
             const current = body.current;
-            const returnStr = current.weather_descriptions[0]+ ". It is currently "+ current.temperature+ " degrees out. There is " + current.precip + "% chances of rain."
+            console.log("***********current weather: ", current)
+            const returnStr = current.weather_descriptions[0]+ ". It is currently "+ current.temperature+ " degrees out. There is " + current.precip + "% chances of rain and current humidity is " + current.humidity + "%." +
+                            "Today's feel like temperature is " + current.feelslike + " degrees."  
             callback(undefined, returnStr);
         } 
     });
